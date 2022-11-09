@@ -9,7 +9,7 @@ export interface LazyImageOptions {
     cache: boolean
 }
 
-export async function lazyimage(node: HTMLImageElement, { root = null, rootMargin = '0px 0px 0px 0px', threshold = 0.0, msCache = 25, cache = true }: Partial<LazyImageOptions> = {}) {
+export function lazyimage(node: HTMLImageElement, { root = null, rootMargin = '0px 0px 0px 0px', threshold = 0.0, msCache = 25, cache = true }: Partial<LazyImageOptions> = {}) {
     const dataSrc = node.dataset?.src as string
     const dataAlt = (node.dataset?.alt || node.getAttribute('alt')) as string
 
@@ -71,6 +71,6 @@ export async function lazyimage(node: HTMLImageElement, { root = null, rootMargi
             },
         };
     } else {
-        await imageLoadOrCache()
+        imageLoadOrCache()
     }
 }
