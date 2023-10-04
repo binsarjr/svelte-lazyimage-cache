@@ -12,11 +12,13 @@
 	}
 </script>
 
-<h1>Welcome to Svelete Lazy Image Cache library project</h1>
-<p>Check your network tab for check lazy image is working or not</p>
+<h1 class="text-center my-3">Svelete Lazy Image Cache</h1>
+<p class="border-start border-4 border-warning-subtle px-2">Check your network tab for check lazy image is working or not</p>
 
-{#each images as image, i}
-	<div>
-		<img src={placeholder} alt="image {i}" data-src={image} use:lazyimage />
-	</div>
-{/each}
+<div class="row">
+  {#each images as image, i}
+  	<div class="col-12 col-md-6 col-lg-3">
+  		<img class="border rounded mx-auto d-block mb-2 w-100" src={placeholder} alt="image {i}" data-src={image} use:lazyimage />
+  	</div>
+  {/each}
+</div>
